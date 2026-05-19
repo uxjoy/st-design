@@ -1,6 +1,6 @@
 "use client";
 
-import { RiErrorWarningLine } from "@remixicon/react";
+// import { RiErrorWarningLine } from "@remixicon/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -39,13 +39,7 @@ const SignIn = () => {
 
       if (response.ok) {
         console.log("Login successful!");
-        // --- IMPORTANT: This is for demonstration only. ---
-        // In a real app, your API would return a JWT or session ID,
-        // and you'd securely store it (e.g., in an httpOnly cookie via your API).
-        // For simple demo, we set a flag:
-        localStorage.setItem("isLoggedIn", "true"); // This is INSECURE for real auth
-        // --- END DEMO WARNING ---
-
+        // The API already sets an auth cookie, so no localStorage needed
         router.push("/"); // Redirect to a protected page after login
       } else {
         setError(data.message || "Login failed.");
@@ -97,7 +91,7 @@ const SignIn = () => {
 
           {error && ( // Display error message if present
             <p className="text-red-500 text-sm flex items-center gap-1">
-              <RiErrorWarningLine size={16} /> {error}{" "}
+              ⚠️ {error}{" "}
             </p>
           )}
 
