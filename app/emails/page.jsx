@@ -1,43 +1,29 @@
-import EmailCard from "@/components/EmailCard";
-import MainLayout from "@/components/MainLayout";
-import flightEmail from "@/data/flightEmails";
+import Navbar from "../../components/Navbar";
+import SidebarLayout from "../../components/SidebarLayout";
+import sidebarData from "../../data/sidebarData";
 
-export default function EmailsPage() {
+export default function EmailPageLayout({ children }) {
+  const emailSidebarItems =
+    sidebarData
+      .find((item) => item.name === "emails")
+      ?.children?.map((child) => ({
+        ...child,
+        href: `/emails${child.href}`,
+      })) ?? [];
+
   return (
-    <MainLayout>
-      <section className="flex w-full h-full">
-        <div className="w-[220px] h-full border-r border-slate-200"></div>
+    <section className="w-full h-screen flex flex-col overflow-hidden">
+      <Navbar />
 
-        <div className="w-full h-full p-5">
-          <div className="max-w-4xl mx-auto">
-            {flightEmail.length > 0 ? (
-              flightEmail?.map((email) => {
-                return (
-                  <div key={email.section} className="mb-10">
-                    <h2 className="text-xl font-bold">{email.section}</h2>
+      <main className="w-full h-full flex overscroll-none">
+        <aside className="sidebar w-64 h-full border-r border-slate-200 overflow-y-auto">
+          <SidebarLayout data={emailSidebarItems} />
+        </aside>
 
-                    <div className="flex flex-col">
-                      {email.frames.map((frame) => {
-                        return (
-                          <EmailCard
-                            key={frame.name}
-                            name={frame.name}
-                            link={frame.link}
-                            section={email.section}
-                            subject={frame.subject}
-                          />
-                        );
-                      })}
-                    </div>
-                  </div>
-                );
-              })
-            ) : (
-              <Empty />
-            )}
-          </div>
+        <div className="wrapper w-full h-full p-5 flex flex-col overflow-y-auto">
+          {children}
         </div>
-      </section>
-    </MainLayout>
+      </main>
+    </section>
   );
 }

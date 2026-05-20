@@ -1,7 +1,13 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
-import { useMemo } from "react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Sidebar,
   SidebarContent,
@@ -14,18 +20,10 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
 import { Home, LogOut } from "lucide-react";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 
 function SidebarContentWrapper({ children }) {
   const pathname = usePathname();
@@ -59,6 +57,7 @@ function SidebarContentWrapper({ children }) {
 export function AppSidebar({ sidebarConfig, sidebarData }) {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -67,6 +66,8 @@ export function AppSidebar({ sidebarConfig, sidebarData }) {
         setIsLoggedIn(res.ok);
       } catch {
         setIsLoggedIn(false);
+      } finally {
+        setIsLoading(false);
       }
     };
     checkAuth();
@@ -93,12 +94,18 @@ export function AppSidebar({ sidebarConfig, sidebarData }) {
             const isActive = sidebarConfig.activeItem === category;
             return (
               <SidebarMenuItem key={category}>
-                <SidebarMenuButton asChild isActive={isActive}>
-                  <Link href={`/icons?category=${category}`}>
-                    <span className="capitalize">
-                      {category.replace("-", " ")}
-                    </span>
-                  </Link>
+                <SidebarMenuButton
+                  render={
+                    <Link
+                      href={`/icons?category=${category}`}
+                      className="w-full text-left"
+                    />
+                  }
+                  isActive={isActive}
+                >
+                  <span className="capitalize">
+                    {category.replace("-", " ")}
+                  </span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             );
@@ -116,10 +123,18 @@ export function AppSidebar({ sidebarConfig, sidebarData }) {
             const isActive = sidebarConfig.activeItem === tab;
             return (
               <SidebarMenuItem key={tab}>
-                <SidebarMenuButton asChild isActive={isActive}>
-                  <Link href={`/emails?section=${tab}`}>
-                    <span className="capitalize">{tab === "all" ? "All" : tab}</span>
-                  </Link>
+                <SidebarMenuButton
+                  render={
+                    <Link
+                      href={`/emails?section=${tab}`}
+                      className="w-full text-left"
+                    />
+                  }
+                  isActive={isActive}
+                >
+                  <span className="capitalize">
+                    {tab === "all" ? "All" : tab}
+                  </span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             );
@@ -132,18 +147,27 @@ export function AppSidebar({ sidebarConfig, sidebarData }) {
     return (
       <SidebarMenu>
         <SidebarMenuItem>
-          <SidebarMenuButton asChild>
-            <Link href="/">Home</Link>
+          <SidebarMenuButton
+            render={<Link href="/" className="w-full text-left" />}
+            nativeButton={false}
+          >
+            Home
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
-          <SidebarMenuButton asChild>
-            <Link href="/icons">Icons</Link>
+          <SidebarMenuButton
+            render={<Link href="/icons" className="w-full text-left" />}
+            nativeButton={false}
+          >
+            Icons
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
-          <SidebarMenuButton asChild>
-            <Link href="/emails">Emails</Link>
+          <SidebarMenuButton
+            render={<Link href="/emails" className="w-full text-left" />}
+            nativeButton={false}
+          >
+            Emails
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>
@@ -166,18 +190,22 @@ export function AppSidebar({ sidebarConfig, sidebarData }) {
       </SidebarContent>
 
       <div className="p-4 border-t">
-        {isLoggedIn ? (
+        {isLoading ? (
+          <div className="h-10 w-full animate-pulse bg-slate-200 rounded" />
+        ) : isLoggedIn ? (
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="w-full justify-start">
-                <Avatar className="h-8 w-8 mr-2">
-                  <AvatarFallback className="bg-blue-500 text-white text-xs">
-                    U
-                  </AvatarFallback>
-                </Avatar>
-                <span>Account</span>
-              </Button>
-            </DropdownMenuTrigger>
+            <DropdownMenuTrigger
+              render={
+                <Button variant="ghost" className="w-full justify-start">
+                  <Avatar className="h-8 w-8 mr-2">
+                    <AvatarFallback className="bg-blue-500 text-white text-xs">
+                      U
+                    </AvatarFallback>
+                  </Avatar>
+                  <span>Account</span>
+                </Button>
+              }
+            />
             <DropdownMenuContent align="end" side="top" className="w-56">
               <DropdownMenuItem
                 onClick={() => router.push("/")}
@@ -196,8 +224,13 @@ export function AppSidebar({ sidebarConfig, sidebarData }) {
             </DropdownMenuContent>
           </DropdownMenu>
         ) : (
-          <Button asChild variant="default" className="w-full">
-            <Link href="/signin">Sign In</Link>
+          <Button
+            render={<Link href="/signin" className="w-full" />}
+            nativeButton={false}
+            variant="default"
+            className="w-full"
+          >
+            Sign In
           </Button>
         )}
       </div>

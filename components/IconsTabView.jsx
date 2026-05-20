@@ -1,22 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
 import Empty from "./Empty";
 import IconCard from "./IconCard";
 import SearchIcon from "./SearchIcon";
 
-function IconsTabViewContent({ iconsByCategory }) {
+export default function IconsTabView({ iconsByCategory }) {
   const categoryNames = Object.keys(iconsByCategory);
   const allIcons = useMemo(
     () => categoryNames.flatMap((category) => iconsByCategory[category]),
@@ -50,32 +39,32 @@ function IconsTabViewContent({ iconsByCategory }) {
 
   return (
     <div className="flex h-full">
-      <Sidebar>
-        <SidebarContent>
-          <SidebarGroup>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {tabs.map((category) => (
-                  <SidebarMenuItem key={category}>
-                    <SidebarMenuButton
-                      onClick={handleTabClick.bind(null, category)}
-                      isActive={activeTab === category}
-                    >
-                      <span className="capitalize">
-                        {category.replace("-", " ")}
-                      </span>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        </SidebarContent>
-      </Sidebar>
+      <div className="sidebar min-w-[248px] bg-white border-r border-slate-100 overflow-y-auto no-scrollbar hidden sm:block">
+        <div className="logo flex items-end gap-2 px-4 py-6 sticky top-0 z-10 bg-gradient-to-b from-white to-white/20 backdrop-blur-sm ">
+          <img src="logo.svg" alt="ShareTrip" className="h-10 w-auto" />
+          <p className="text-slate-600">Icons</p>
+        </div>
 
-      <div className="flex flex-col flex-1 h-full overflow-y-auto" ref={topRef}>
-        <div className="sticky top-0 z-10 bg-gradient-to-b from-white to-90% px-5 py-4 flex items-center gap-2">
-          <SidebarTrigger className="sm:hidden" />
+        <div className="flex flex-col gap-0.5 p-4 pt-2 w-full">
+          {tabs.map((category) => (
+            <button
+              key={category}
+              onClick={handleTabClick.bind(null, category)}
+              className={`px-4 py-2 text-left capitalize rounded-md text-sm cursor-pointer ease-in-out duration-200 hover:pl-5.5 ${
+                activeTab === category
+                  ? "bg-black text-white"
+                  : "text-slate-600 hover:bg-slate-100"
+              }`}
+            >
+              <span> {category.replace("-", " ")} </span>
+              {/* <span className="text-slate-400 font-normal"> ({filteredIcons.length}) </span> */}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-col w-full h-full overflow-y-auto" ref={topRef}>
+        <div className="sticky top-0 z-10 bg-gradient-to-b from-white to-90% px-5 py-4">
           <SearchIcon
             searchVlaue={search}
             iconLength={filteredIcons.length}
@@ -96,13 +85,5 @@ function IconsTabViewContent({ iconsByCategory }) {
         </div>
       </div>
     </div>
-  );
-}
-
-export default function IconsTabView({ iconsByCategory }) {
-  return (
-    <SidebarProvider>
-      <IconsTabViewContent iconsByCategory={iconsByCategory} />
-    </SidebarProvider>
   );
 }

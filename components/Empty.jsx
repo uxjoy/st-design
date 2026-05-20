@@ -11,7 +11,9 @@ const Empty = () => {
       </svg>
 
       <div className="mt-4">
-        <h2 className="text-xl font-medium text-gray-700">No icons found!</h2>
+        <h2 className="text-xl font-medium text-gray-700">
+          The is not content available!
+        </h2>
         <p className="text-gray-500 mt-2 text-sm">
           Try a different keyword. We couldn’t find any icons matching your
           selection.

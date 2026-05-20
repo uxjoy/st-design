@@ -23,14 +23,24 @@ export default function IconCard({ iconName }) {
   // Extract just the filename
   const shortName = iconName.split("/").pop()?.replace(".svg", "");
 
+  console.log(iconName);
+
   return (
     <>
       <div
         className="flex flex-col min-h-[120px] gap-2 items-center justify-center text-center bg-slate-100 p-4 rounded-lg cursor-pointer border border-slate-100 hover:bg-blue-50 hover:border-blue-200 ease-in-out duration-200 group scale-100 hover:scale-90"
         onClick={() => setOpen(true)}
       >
-        <img src={`/icons/${iconName}`} alt={shortName} className="w-auto h-7" />
-        <p className={`text-xs leading-tight text-slate-800 mt-1 group-hover:text-blue-500`}>{shortName}</p>
+        <img
+          src={`/icons/${iconName}`}
+          alt={shortName}
+          className="w-auto h-7"
+        />
+        <p
+          className={`text-xs leading-tight text-slate-800 mt-1 group-hover:text-blue-500`}
+        >
+          {shortName}
+        </p>
       </div>
 
       {/* <div className="text-center cursor-pointer hover:bg-gray-100 p-3 rounded" onClick={() => setOpen(true)}>

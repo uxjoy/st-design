@@ -1,4 +1,4 @@
-const flightEmails = [
+const flightEmailData = [
   {
     section: "Void",
     frames: [
@@ -193,6 +193,11 @@ const flightEmails = [
         subject:
           "B2C Flight One Way International Flight Booking Confirmation Attachment",
       },
+      {
+        name: "b2cFlightPostBookingConfirmationEmail",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6769-37717",
+        subject: "Your Extra Baggage has been Confirmed!",
+      },
     ],
   },
   {
@@ -318,6 +323,26 @@ const flightEmails = [
         link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6746-354199",
         subject: "Payment Reversal Notification",
       },
+      {
+        name: "b2cFlightPartialPayDueReminder",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6769-37893",
+        subject: "Reminder on Due Amount for Partial Payment",
+      },
+      {
+        name: "b2cFlightPartialPayConfirmationOfFullPaymentEmail",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6769-37996",
+        subject: "Confirmation of Full Payment",
+      },
+      {
+        name: "b2cFlightPartialPaymentRequestEmail",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6769-38051",
+        subject: "Partial Payment Request Received",
+      },
+      {
+        name: "b2cFlightPartialPayReminderEmail",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6769-38109",
+        subject: "Partial Payment Reminder",
+      },
     ],
   },
   {
@@ -332,4 +357,4 @@ const flightEmails = [
   },
 ];
 
-export default flightEmails;
+export default flightEmailData;
