@@ -16,9 +16,7 @@ export default function EmailPageLayout({ children }) {
       <Navbar />
 
       <main className="w-full h-full flex overscroll-none">
-        <aside className="sidebar w-64 h-full border-r border-slate-200 overflow-y-auto">
-          <SidebarLayout data={emailSidebarItems} />
-        </aside>
+        <SidebarLayout data={emailSidebarItems} />
 
         <div className="wrapper w-full h-full p-5 flex flex-col overflow-y-auto">
           {children}

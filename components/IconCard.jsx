@@ -23,8 +23,6 @@ export default function IconCard({ iconName }) {
   // Extract just the filename
   const shortName = iconName.split("/").pop()?.replace(".svg", "");
 
-  console.log(iconName);
-
   return (
     <>
       <div

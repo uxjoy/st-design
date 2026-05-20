@@ -1,5 +1,6 @@
 import { Geist } from "next/font/google";
 import "./globals.css";
+import NavigationLoader from "../components/NavigationLoader";
 
 const font = Geist({
   variable: "--font-geist-sans",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={font.className} suppressHydrationWarning>
+        <NavigationLoader />
         {children}
       </body>
     </html>

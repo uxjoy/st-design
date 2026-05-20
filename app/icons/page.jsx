@@ -18,9 +18,7 @@ export default async function IconsPage() {
       <Navbar />
 
       <main className="w-full h-full flex overscroll-none">
-        <aside className="sidebar w-64 h-full border-r border-slate-200 overflow-y-auto">
-          <SidebarLayout data={categories} />
-        </aside>
+        <SidebarLayout data={categories} />
 
         <div className="wrapper w-full h-full p- flex flex-col overflow-y-auto">
           <IconsContent iconsByCategory={iconsByCategory} />

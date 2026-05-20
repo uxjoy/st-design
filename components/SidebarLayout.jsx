@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const SidebarLayout = ({ data }) => {
   return (
-    <div className="sidebar-menu p-4 px-3">
+    <sidebar className="sidebar w-64 h-full border-r border-slate-200 overflow-y-auto p-3">
       {data?.map((menu, index) => (
         <Link
           key={index}
@@ -12,7 +12,7 @@ const SidebarLayout = ({ data }) => {
           {menu.name}
         </Link>
       ))}
-    </div>
+    </sidebar>
   );
 };
 
