@@ -17,6 +17,7 @@ export default function NavigationLoader() {
   const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
   const [pendingUrl, setPendingUrl] = useState(null);
+  const timeoutRef = useRef(null);
 
   const currentUrl = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
 
@@ -54,7 +55,34 @@ export default function NavigationLoader() {
 
     setIsLoading(false);
     setPendingUrl(null);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
   }, [currentUrl, pendingUrl]);
+
+  // Safety timeout: if navigation takes too long (e.g. due to redirects), clear the loader
+  useEffect(() => {
+    if (!pendingUrl) return;
+
+    // Clear any existing timer
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      setIsLoading(false);
+      setPendingUrl(null);
+      timeoutRef.current = null;
+    }, 3500);
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
+  }, [pendingUrl]);
 
   if (!isLoading) return null;
 
