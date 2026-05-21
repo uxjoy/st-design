@@ -1,10 +1,12 @@
-import { Geist } from "next/font/google";
-import "./globals.css";
+import { Lato } from "next/font/google";
+import { Suspense } from "react";
 import NavigationLoader from "../components/NavigationLoader";
+import "./globals.css";
 
-const font = Geist({
-  variable: "--font-geist-sans",
+const font = Lato({
+  variable: "--font-lato",
   subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
 });
 
 export const metadata = {
@@ -24,7 +26,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={font.className} suppressHydrationWarning>
-        <NavigationLoader />
+        <Suspense fallback={null}>
+          <NavigationLoader />
+        </Suspense>
         {children}
       </body>
     </html>

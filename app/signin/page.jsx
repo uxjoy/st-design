@@ -31,16 +31,22 @@ const SignIn = () => {
     try {
       const response = await fetch("/api/auth/signin", {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
 
-      const data = await response.json();
+      const text = await response.text();
+      let data = {};
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch {
+        data = { message: text || response.statusText };
+      }
 
       if (response.ok) {
         console.log("Login successful!");
-        // The API already sets an auth cookie, so no localStorage needed
-        router.push("/"); // Redirect to a protected page after login
+        window.location.href = "/";
       } else {
         setError(data.message || "Login failed.");
       }

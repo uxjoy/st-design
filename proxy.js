@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export function middleware(request) {
+export function proxy(request) {
   const loggedInCookie = request.cookies.get("isLoggedIn");
   const userIsLoggedIn = loggedInCookie && loggedInCookie.value === "true";
 

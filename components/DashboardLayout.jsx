@@ -62,10 +62,12 @@ export function AppSidebar({ sidebarConfig, sidebarData }) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("/api/auth/check");
-        setIsLoggedIn(res.ok);
+        const res = await fetch("/api/auth/check", {
+          credentials: "include",
+        });
+        setIsLoggedIn(res.ok || document.cookie.includes("isLoggedIn=true"));
       } catch {
-        setIsLoggedIn(false);
+        setIsLoggedIn(document.cookie.includes("isLoggedIn=true"));
       } finally {
         setIsLoading(false);
       }
@@ -75,7 +77,10 @@ export function AppSidebar({ sidebarConfig, sidebarData }) {
 
   const handleLogout = async () => {
     try {
-      await fetch("/api/auth/logout", { method: "POST" });
+      await fetch("/api/auth/logout", {
+        method: "POST",
+        credentials: "include",
+      });
       setIsLoggedIn(false);
       router.push("/signin");
     } catch (err) {

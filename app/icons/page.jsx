@@ -1,5 +1,6 @@
 import IconsContent from "@/components/IconsContent";
 import { getIconsByCategory } from "@/utils/common";
+import { Suspense } from "react";
 import Navbar from "../../components/Navbar";
 import SidebarLayout from "../../components/SidebarLayout";
 
@@ -18,9 +19,13 @@ export default async function IconsPage() {
       <Navbar />
 
       <main className="w-full flex-1 min-h-0 flex overscroll-none">
-        <SidebarLayout data={categories} />
+        <Suspense fallback={null}>
+          <SidebarLayout data={categories} />
+        </Suspense>
 
-        <IconsContent iconsByCategory={iconsByCategory} />
+        <Suspense fallback={null}>
+          <IconsContent iconsByCategory={iconsByCategory} />
+        </Suspense>
       </main>
     </section>
   );

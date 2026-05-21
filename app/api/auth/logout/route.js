@@ -1,7 +1,13 @@
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
 
 export async function POST() {
-  cookies().delete("isLoggedIn");
-  return NextResponse.json({ message: "Logged out successfully" }, { status: 200 });
+  return NextResponse.json(
+    { message: "Logged out successfully" },
+    {
+      status: 200,
+      headers: {
+        "Set-Cookie": "isLoggedIn=; Path=/; Max-Age=0; SameSite=Lax",
+      },
+    },
+  );
 }
