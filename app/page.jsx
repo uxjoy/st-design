@@ -78,15 +78,15 @@ export default function HomePage() {
             <div className="flex justify-center mb-8 animate-fade-in">
               <Badge
                 variant="outline"
-                className="px-4 py-1.5 text-sm border-slate-200 bg-white/50 backdrop-blur-sm"
+                className="px-3 py-4 text-sm border-slate-200 bg-white/50 backdrop-blur-sm"
               >
-                <Sparkles className="mr-1.5 h-3.5 w-3.5" />
+                <Sparkles className="mr-1 h-3.5 w-3.5" />
                 ShareTrip Assets
               </Badge>
             </div>
 
             {/* Heading */}
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-center animate-slide-up">
+            <h1 className="text-5xl leading-tight md:text-7xl font-bold tracking-tight mb-6 text-center animate-slide-up">
               Your Design Assets,
               <br />
               <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
@@ -95,14 +95,14 @@ export default function HomePage() {
             </h1>
 
             {/* Description */}
-            <p className="text-xl text-slate-600 dark:text-slate-400 text-center max-w-2xl mx-auto mb-10 animate-slide-up animation-delay-100">
-              Access icons, email templates, and design resources all in one
-              secure location. Streamline your workflow with ShareTrip's
+            <p className="text-xl text-slate-600 dark:text-slate-400 text-center max-w-2xl mx-auto animate-slide-up animation-delay-100">
+              Access icons, email templates, and design resources all in <br />
+              one secure location. Streamline your workflow with ShareTrip's
               comprehensive asset library.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animation-delay-200">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animation-delay-200 mt-10">
               <Button
                 render={<Link href="/icons" />}
                 nativeButton={false}
