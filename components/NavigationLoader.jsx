@@ -59,12 +59,10 @@ export default function NavigationLoader() {
   if (!isLoading) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/30 p-4">
-      <div className="flex flex-col items-center justify-center gap-3 rounded-3xl bg-white w-40 h-40 shadow-2xl">
-        {/* <div className="h-12 w-12 animate-spin"> */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80  backdrop-blur-xs p-4">
+      <div className="flex flex-col items-center justify-center gap-3 rounded-3xl w-40 h-40b">
         <Loader className="animate-spin text-blue-500" size={32} />
-        {/* </div> */}
-        <p className="text-sm font-semibold text-slate-900">Loading page…</p>
+        <p className="text- text-slate-900">Loading page…</p>
       </div>
     </div>
   );

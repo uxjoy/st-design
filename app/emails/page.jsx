@@ -15,10 +15,14 @@ export default function EmailPageLayout({ children }) {
     <section className="w-full h-screen flex flex-col overflow-hidden">
       <Navbar />
 
-      <main className="w-full h-full flex overscroll-none">
+      <main className="w-full flex-1 flex min-h-0 overflow-y-auto">
         <SidebarLayout data={emailSidebarItems} />
 
-        <div className="wrapper w-full h-full p-5 flex flex-col overflow-y-auto">
+        <div className=" w-full h-full">
+          {/* <h1 className="text-xl font-semibold p-4 bg-slate-50">
+            Flight Emails
+          </h1> */}
+
           {children}
         </div>
       </main>

@@ -1,11 +1,12 @@
 import Empty from "../../../components/Empty";
+import EmailPageLayout from "../page";
 import MainLayout from "../../../components/MainLayout";
 
 const ProfileEmailList = () => {
   return (
-    <MainLayout>
+    <EmailPageLayout>
       <Empty />
-    </MainLayout>
+    </EmailPageLayout>
   );
 };
 

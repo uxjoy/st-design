@@ -1,11 +1,11 @@
 import Empty from "../../../components/Empty";
-import MainLayout from "../../../components/MainLayout";
+import EmailPageLayout from "../page";
 
 const VisaEmailList = () => {
   return (
-    <MainLayout>
+    <EmailPageLayout>
       <Empty />
-    </MainLayout>
+    </EmailPageLayout>
   );
 };
 

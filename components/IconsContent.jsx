@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { LucideSearch } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import Empty from "./Empty";
+import { useEffect, useMemo, useRef, useState } from "react";
 import IconCard from "./IconCard";
 
 export default function IconsContent({ iconsByCategory }) {
@@ -51,19 +51,29 @@ export default function IconsContent({ iconsByCategory }) {
   }, [activeTab]);
 
   return (
-    <div className="p-5 pt-2 h-full">
-      <div className="mb-4">
+    <div
+      className="w-full flex-1 min-h-0 overflow-y-auto flex flex-col"
+      ref={topRef}
+    >
+      <div className="sticky top-0 z-10 bg-white flex items-center gap-2 border-b border-slate-200 px-5">
+        <LucideSearch size={20} className="text-blue-500" />
         <input
           type="text"
           value={search}
           onChange={(e) => handleSearchChange(e.target.value)}
           placeholder={`Search ${filteredIcons.length} icons...`}
-          className="w-full h-12 px-4 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full h-12 border-0  focus:outline-none "
         />
+
+        {/* <SearchIcon
+          searchValue={search}
+          iconLength={filteredIcons.length}
+          changeHandler={(e) => handleSearchChange(e.target.value)}
+        /> */}
       </div>
 
       {filteredIcons.length > 0 ? (
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-2 sm:gap-3 pb-6">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-2 sm:gap-3 p-6">
           {filteredIcons.map((iconPath) => (
             <IconCard key={iconPath} iconName={iconPath} />
           ))}

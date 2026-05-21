@@ -17,12 +17,10 @@ export default async function IconsPage() {
     <section className="w-full h-screen flex flex-col overflow-hidden">
       <Navbar />
 
-      <main className="w-full h-full flex overscroll-none">
+      <main className="w-full flex-1 min-h-0 flex overscroll-none">
         <SidebarLayout data={categories} />
 
-        <div className="wrapper w-full h-full p- flex flex-col overflow-y-auto">
-          <IconsContent iconsByCategory={iconsByCategory} />
-        </div>
+        <IconsContent iconsByCategory={iconsByCategory} />
       </main>
     </section>
   );

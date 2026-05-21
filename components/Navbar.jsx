@@ -1,5 +1,6 @@
 "use client";
 
+import navLinks from "@/data/navLinks";
 import { Home, LogOut, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -56,19 +57,13 @@ export default function Navbar() {
     }
   };
 
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/icons?category=all", label: "Icons" },
-    { href: "/emails", label: "Emails" },
-  ];
-
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="flex h-16 items-center justify-between px-4">
+      <div className="flex h-14 items-center justify-between px-4">
         {/* Left */}
         <div className="flex items-center">
           <Link href="/" className="mr-6 hidden md:block">
-            <img src="/logo.svg" alt="ShareTrip" className="h-10 w-auto" />
+            <img src="/logo.svg" alt="ShareTrip" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
