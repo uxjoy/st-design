@@ -1,8 +1,6 @@
 import IconsContent from "@/components/IconsContent";
+import MainLayout from "@/components/MainLayout";
 import { getIconsByCategory } from "@/utils/common";
-import { Suspense } from "react";
-import Navbar from "../../components/Navbar";
-import SidebarLayout from "../../components/SidebarLayout";
 
 export default async function IconsPage() {
   const iconsByCategory = await getIconsByCategory();
@@ -15,18 +13,8 @@ export default async function IconsPage() {
   ];
 
   return (
-    <section className="w-full h-screen flex flex-col overflow-hidden">
-      <Navbar />
-
-      <main className="w-full flex-1 min-h-0 flex overscroll-none">
-        <Suspense fallback={null}>
-          <SidebarLayout data={categories} />
-        </Suspense>
-
-        <Suspense fallback={null}>
-          <IconsContent iconsByCategory={iconsByCategory} />
-        </Suspense>
-      </main>
-    </section>
+    <MainLayout sidebarData={categories} showSidebar={true}>
+      <IconsContent iconsByCategory={iconsByCategory} />
+    </MainLayout>
   );
 }

@@ -33,7 +33,7 @@ const FlightEmailList = () => {
 
   return (
     <EmailPageLayout>
-      <div className="flex flex-1 w-full h-full min-h-0 overflow-y-auto">
+      <div className="flex flex-1 w-full h-full min-h-0 overflow-y-auto ">
         <aside className="sticky top-0 min-w-55 max-w-55 h-full border-r border-slate-200 overflow-y-auto p-3">
           <input
             type="search"
@@ -60,7 +60,7 @@ const FlightEmailList = () => {
           )}
         </aside>
 
-        <div className="flex-1 w-full h-full overflow-y-auto space-y-12 py-6 px-8  scroll-smooth">
+        <div className="flex-1 w-full main-container h-full space-y-12 py-6 px-8  scroll-smooth">
           {filteredEmailData.length > 0 ? (
             filteredEmailData.map((email, i) => (
               <div
