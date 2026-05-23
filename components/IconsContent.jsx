@@ -51,10 +51,7 @@ export default function IconsContent({ iconsByCategory }) {
   }, [activeTab]);
 
   return (
-    <div
-      className="w-full flex-1 min-h-0 overflow-y-auto flex flex-col"
-      ref={topRef}
-    >
+    <div className="min-h-full" ref={topRef}>
       <div className="sticky top-0 z-10 bg-white flex items-center gap-2 border-b border-slate-200 px-5">
         <LucideSearch size={20} className="text-blue-500" />
         <input

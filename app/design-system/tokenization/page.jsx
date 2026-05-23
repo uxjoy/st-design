@@ -69,20 +69,20 @@ const Tokenization = () => {
                     <thead>
                       <tr>
                         <th>Token</th>
-                        <th>Reference</th>
                         <th>Value</th>
+                        <th>Reference</th>
                       </tr>
                     </thead>
 
                     <tbody>
                       {tokens.map((token) => (
                         <tr key={token.name}>
-                          <td className="text-base">
-                            <span>{token.name.replaceAll("/", "-")}</span>
+                          <td className="text-base w-2/4">
+                            <p>{token.name.replaceAll("/", "-")}</p>
                           </td>
 
-                          <td>
-                            <p className="w-fit inline-flex items-center gap-2 font-mono text-sm">
+                          <td className="w-1/4">
+                            <p className="w-fit inline-flex items-center gap-2 font-mono text-sm uppercase">
                               <span
                                 className="min-w-2 min-h-2 rounded-full inline-block border border-black/10"
                                 style={{ backgroundColor: token.hex }}
@@ -91,7 +91,7 @@ const Tokenization = () => {
                             </p>
                           </td>
 
-                          <td>
+                          <td className="w-1/4">
                             <p className="w-fit inline-flex items-center text-sm text-slate-700 gap-2 font-mono border border-slate-200 rounded px-2 py-1 bg-slate-50">
                               <span
                                 className="min-w-4 min-h-4 rounded inline-block border border-black/10"

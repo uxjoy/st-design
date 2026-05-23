@@ -104,7 +104,7 @@ const Typography = () => {
                         </thead>
 
                         <tbody>
-                          {group.variants.map((style) => (
+                          {group.variants.reverse().map((style) => (
                             <tr
                               key={style.name}
                               className="hover:bg-slate-50 transition-all ease-in-out duration-200"
@@ -116,9 +116,7 @@ const Typography = () => {
                                     style={{
                                       fontFamily: typographyJson.fontFamily,
                                       fontSize: `${style.fontSize}px`,
-                                      fontWeight: normalizeWeight(
-                                        style.fontWeight,
-                                      ),
+                                      fontWeight: style.fontWeight,
                                       lineHeight:
                                         style.lineHeight?.unit === "PIXELS"
                                           ? `${style.lineHeight.value}px`
