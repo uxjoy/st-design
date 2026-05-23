@@ -1,6 +1,7 @@
 "use client";
 
 import Mainlayout from "@/components/MainLayout";
+import PageHeader from "@/components/PageHeader";
 import { Suspense, useState } from "react";
 import designSystemRoute from "../designSystemRoute";
 import premetiveColors from "./premetiveColors";
@@ -26,27 +27,21 @@ const Colors = () => {
   return (
     <Suspense fallback={null}>
       <Mainlayout showSidebar={true} sidebarData={designSystemRoute}>
-        <div className="flex-1 w-full h-full min-h-0 overflow-y-auto p-6">
-          <div className="max-w-4xl space-y-4 pb-8">
-            <p className="text-sm uppercase tracking-[0.25em] text-slate-500">
-              Customization
-            </p>
-            <h1 className="text-4xl font-semibold tracking-tight text-slate-900">
-              Customizing Colors
-            </h1>
-            <p className="max-w-3xl text-base leading-7 text-slate-600">
-              Tailwind includes an expertly-crafted default color palette
-              out-of-the-box that is a great starting point if you don’t have
-              your own specific branding in mind.
-            </p>
-          </div>
+        <div className="side-pattern">
+          <PageHeader
+            label={"Customization"}
+            title={"Premetive Colors"}
+            description={
+              "Tailwind includes an expertly-crafted default color palette  out-of-the-box that is a great starting point if you don’t have your own specific branding in mind."
+            }
+          />
 
-          <div className="space-y-10">
+          <div className="main-container py-12 space-y-10">
             {groups.map(([groupName, colors]) => (
               <section key={groupName} className="space-y-4">
                 <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
                   <div>
-                    <h2 className="text-2xl font-semibold text-slate-900">
+                    <h2 className="text-xl font-semibold text-slate-900">
                       {capitalize(groupName)}
                     </h2>
                     <p className="text-sm text-slate-500">
@@ -60,26 +55,25 @@ const Colors = () => {
                     <div
                       key={color.scale}
                       onClick={() => handleCopy(color.hex)}
-                      className="overflow-hidden cursor-pointer space-y-2 text-sm"
+                      className="overflow-hidden cursor-pointer space-y-2 text-sm mb-3"
                     >
-                      <div className="relative">
-                        <div
-                          className={`aspect-video rounded ${color.hex === "#ffffff" ? "border border-slate-200" : ""}`}
-                          style={{ backgroundColor: color.hex }}
-                        />
-
+                      {/* <div className="relative"> */}
+                      <div
+                        className={`relaive flex items-center justify-center aspect-video rounded border border-black/5`}
+                        style={{ backgroundColor: color.hex }}
+                      >
                         {copiedHex === color.hex ? (
-                          <div className="absolute left-1/2 top-3 z-20 -translate-x-1/2 rounded-full bg-slate-950 px-3 py-1 text-xs text-white">
+                          <div className="rounded bg-slate-950 px-1 py-0.5 text-xs text-white">
                             Copied
                           </div>
                         ) : null}
                       </div>
 
-                      <div className="flex flex-col gap-">
-                        <span className="font-semibold text-slate-900">
+                      <div className="flex flex-col font-mono">
+                        <span className="font-medium text-slate-800">
                           {color.scale}
                         </span>
-                        <span className="text-slate-500 uppercase">
+                        <span className="text-slate-500 uppercase font-mono text-xs">
                           {color.hex}
                         </span>
                       </div>

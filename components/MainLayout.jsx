@@ -13,14 +13,14 @@ const MainLayout = ({ showSidebar, sidebarData, children }) => {
   //     })) ?? [];
 
   return (
-    <section className="w-full h-screen flex flex-col overflow-hidden">
+    <section className="w-full h-screen flex flex-col overflow-hidden p">
       <Navbar />
 
       {showSidebar ? (
         <main className="w-full flex-1 flex min-h-0 overflow-y-auto">
           <SidebarLayout data={sidebarData} />
 
-          <div className="w-full h-full">{children}</div>
+          <div className="w-full h-full overflow-y-auto">{children}</div>
         </main>
       ) : (
         <main className="w-full h-full flex-1 overflow-y-auto">{children}</main>

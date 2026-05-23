@@ -7,6 +7,7 @@
 body {
   scroll-behavior: smooth;
   color: #1f2937;
+
   /* color: @apply text-gray-800; */
 }
 
@@ -20,12 +21,57 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+.main-container {
+  @apply w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.side-pattern {
+  @apply relative;
+}
+
+.side-pattern::before {
+  content: "";
+  @apply absolute w-3 sm:w-8  h-full top-0 left-0 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 md:col-start-3 md:block dark:[--pattern-fg:var(--color-white)]/10;
+}
+
+.side-pattern::after {
+  content: "";
+  @apply absolute w-3 sm:w-8  h-full top-0 right-0 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 md:col-start-3 md:block dark:[--pattern-fg:var(--color-white)]/10;
+}
+
+.slash-pattern {
+  @apply border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 md:col-start-3 md:block dark:[--pattern-fg:var(--color-white)]/10;
+}
+
+.dot-pattern {
+  @apply bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 dark:[--pattern-fg:var(--color-white)]/10;
+}
+
 button {
   cursor: pointer;
 }
 
 p {
   margin-bottom: 0;
+}
+
+table {
+  @apply border-1 border-slate-200;
+}
+
+th {
+  @apply bg-slate-100 uppercase text-slate-600 text-sm !py-3;
+}
+
+table,
+thead,
+tbody {
+  @apply w-full border-collapse;
+}
+
+th,
+td {
+  @apply border border-slate-200 px-3 py-1.5 text-left h-auto;
 }
 
 @theme inline {
