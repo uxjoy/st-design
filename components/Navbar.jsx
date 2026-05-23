@@ -18,12 +18,10 @@ export default function Navbar() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("/api/auth/check", {
-          credentials: "include",
-        });
-        setIsLoggedIn(res.ok || document.cookie.includes("isLoggedIn=true"));
+        const res = await fetch("/api/auth/check");
+        setIsLoggedIn(res.ok);
       } catch {
-        setIsLoggedIn(document.cookie.includes("isLoggedIn=true"));
+        setIsLoggedIn(false);
       } finally {
         setIsLoading(false);
       }
@@ -50,7 +48,6 @@ export default function Navbar() {
     try {
       await fetch("/api/auth/logout", {
         method: "POST",
-        credentials: "include",
       });
 
       setIsLoggedIn(false);

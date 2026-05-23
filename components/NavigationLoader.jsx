@@ -2,7 +2,7 @@
 
 import { Loader } from "lucide-react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function findAnchor(element) {
   while (element && element !== document.body) {
