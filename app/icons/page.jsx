@@ -1,6 +1,7 @@
 import IconsContent from "@/components/IconsContent";
 import MainLayout from "@/components/MainLayout";
 import { getIconsByCategory } from "@/utils/common";
+import { Suspense } from "react";
 
 export default async function IconsPage() {
   const iconsByCategory = await getIconsByCategory();
@@ -13,8 +14,10 @@ export default async function IconsPage() {
   ];
 
   return (
-    <MainLayout sidebarData={categories} showSidebar={true}>
-      <IconsContent iconsByCategory={iconsByCategory} />
-    </MainLayout>
+    <Suspense fallback={null}>
+      <MainLayout sidebarData={categories} showSidebar={true}>
+        <IconsContent iconsByCategory={iconsByCategory} />
+      </MainLayout>
+    </Suspense>
   );
 }
