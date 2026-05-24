@@ -15,7 +15,7 @@ export default async function IconsPage() {
 
   return (
     <Suspense fallback={null}>
-      <MainLayout sidebarData={categories} showSidebar={true}>
+      <MainLayout sidebarData={categories} menuText={"ST Icons"}>
         <IconsContent iconsByCategory={iconsByCategory} />
       </MainLayout>
     </Suspense>
