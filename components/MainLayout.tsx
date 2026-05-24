@@ -1,9 +1,16 @@
 "use client";
 
+import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import SidebarLayout from "./SidebarLayout";
 
-const MainLayout = ({ showSidebar, sidebarData, children }) => {
+interface MainLayoutProps {
+  sidebarData: any;
+  children: ReactNode;
+  menuText?: string;
+}
+
+const MainLayout = ({ sidebarData, children, menuText }: MainLayoutProps) => {
   // const emailSidebarItems =
   //   sidebarData
   //     .find((item) => item.name === "emails")
@@ -13,12 +20,12 @@ const MainLayout = ({ showSidebar, sidebarData, children }) => {
   //     })) ?? [];
 
   return (
-    <section className="w-full h-screen flex flex-col overflow-hidden p">
+    <section className="w-full h-screen flex flex-col overflow-hidden">
       <Navbar />
 
-      {showSidebar ? (
+      {sidebarData ? (
         <main className="w-full flex-1 flex min-h-0 overflow-y-auto">
-          <SidebarLayout data={sidebarData} />
+          <SidebarLayout data={sidebarData} menuText={menuText} />
 
           <div className="w-full h-full overflow-y-auto">{children}</div>
         </main>

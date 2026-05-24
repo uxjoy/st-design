@@ -3,14 +3,19 @@
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 
-const SidebarLayout = ({ data, showMenu, menuText }) => {
+interface SidebarDataProps {
+  data: any;
+  menuText?: string;
+}
+
+const SidebarLayout = ({ data, menuText }: SidebarDataProps) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPath = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
 
   return (
     <aside className="sidebar min-w-55 max-w-55 h-full overflow-y-auto p-4 no-scrollbar border-r border-slate-200">
-      {showMenu && (
+      {menuText != null && (
         <h5 className="text-xs uppercase text-slate-500 font-medium mb-3">
           {menuText}
         </h5>

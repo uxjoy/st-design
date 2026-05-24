@@ -2,11 +2,11 @@ import MainLayout from "@/components/MainLayout";
 import { Suspense } from "react";
 import designSystemRoute from "./designSystemRoute";
 
-const DesignSystemLayout = () => {
+const DesignSystemLayout = ({ children }) => {
   return (
     <Suspense fallback={null}>
-      <MainLayout showSidebar={true} sidebarData={designSystemRoute}>
-        <div className="content"></div>
+      <MainLayout sidebarData={designSystemRoute} menuText={"Design System"}>
+        {children}
       </MainLayout>
     </Suspense>
   );
