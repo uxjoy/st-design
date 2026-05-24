@@ -1,10 +1,11 @@
 import IconsContent from "@/components/IconsContent";
 import MainLayout from "@/components/MainLayout";
-import { getIconsByCategory } from "@/utils/common";
+import { getIconsByCategory } from "@/utils/getIconsByCategory";
 import { Suspense } from "react";
 
 export default async function IconsPage() {
   const iconsByCategory = await getIconsByCategory();
+
   const categories = [
     { name: "All", href: "/icons?category=all" },
     ...Object.keys(iconsByCategory).map((cat) => ({

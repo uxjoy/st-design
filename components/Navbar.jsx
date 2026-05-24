@@ -62,7 +62,7 @@ export default function Navbar() {
       <div className="flex h-14 items-center justify-between px-4">
         {/* Left */}
         <div className="flex items-center">
-          <Link href="/" className="mr-6 hidden md:block">
+          <Link href="/" className="mr-6 ">
             <img src="/logo.svg" alt="ShareTrip" className="h-8 w-auto" />
           </Link>
 
@@ -79,11 +79,6 @@ export default function Navbar() {
             ))}
           </div>
         </div>
-
-        {/* Mobile Logo */}
-        <Link href="/" className="md:hidden">
-          <img src="/logo.svg" alt="ShareTrip" className="h-8 w-auto" />
-        </Link>
 
         {/* Right */}
         <div className="flex items-center space-x-2">

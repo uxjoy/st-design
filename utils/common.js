@@ -1,22 +1,22 @@
-import fs from "fs/promises";
-import path from "path";
+// Get Email Data
+export function filterEmailSections(data, searchQuery) {
+  const normalizedQuery = searchQuery.trim().toLowerCase();
 
-export const getIconsByCategory = async () => {
-  const baseDir = path.join(process.cwd(), "public/icons");
-  const categories = await fs.readdir(baseDir);
-  const result = {};
-
-  for (const category of categories) {
-    const categoryPath = path.join(baseDir, category);
-    // console.log(categoryPath);
-
-    const stat = await fs.stat(categoryPath);
-    if (stat.isDirectory()) {
-      const files = await fs.readdir(categoryPath);
-      const svgFiles = files.filter((f) => f.endsWith(".svg"));
-      result[category] = svgFiles.map((file) => `${category}/${file}`);
-    }
+  if (!normalizedQuery) {
+    return data;
   }
 
-  return result;
-};
+  return data
+    .map((section) => ({
+      ...section,
+      frames: section.frames.filter((frame) => {
+        const name = frame.name.toLowerCase();
+        const subject = frame.subject.toLowerCase();
+
+        return (
+          name.includes(normalizedQuery) || subject.includes(normalizedQuery)
+        );
+      }),
+    }))
+    .filter((section) => section.frames.length > 0);
+}

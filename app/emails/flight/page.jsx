@@ -2,7 +2,7 @@
 
 import EmailCard from "@/components/EmailCard";
 import Empty from "@/components/Empty";
-import Link from "next/link";
+import { filterEmailSections } from "@/utils/common";
 import { useMemo, useState } from "react";
 import flightEmailData from "../../../data/flightEmails";
 import EmailPageLayout from "../page";
@@ -10,31 +10,74 @@ import EmailPageLayout from "../page";
 const FlightEmailList = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredEmailData = useMemo(() => {
-    const normalizedQuery = searchQuery.trim().toLowerCase();
-    if (!normalizedQuery) {
-      return flightEmailData;
-    }
+  const filteredEmails = useMemo(
+    () => filterEmailSections(flightEmailData, searchQuery),
+    [flightEmailData, searchQuery],
+  );
 
-    return flightEmailData
-      .map((section) => {
-        const filteredFrames = section.frames.filter((frame) => {
-          const name = frame.name.toLowerCase();
-          const subject = frame.subject.toLowerCase();
-          return (
-            name.includes(normalizedQuery) || subject.includes(normalizedQuery)
-          );
-        });
+  // const filteredEmailData = useMemo(() => {
+  //   const normalizedQuery = searchQuery.trim().toLowerCase();
+  //   if (!normalizedQuery) {
+  //     return flightEmailData;
+  //   }
 
-        return { ...section, frames: filteredFrames };
-      })
-      .filter((section) => section.frames.length > 0);
-  }, [searchQuery]);
+  //   return flightEmailData
+  //     .map((section) => {
+  //       const filteredFrames = section.frames.filter((frame) => {
+  //         const name = frame.name.toLowerCase();
+  //         const subject = frame.subject.toLowerCase();
+  //         return (
+  //           name.includes(normalizedQuery) || subject.includes(normalizedQuery)
+  //         );
+  //       });
+
+  //       return { ...section, frames: filteredFrames };
+  //     })
+  //     .filter((section) => section.frames.length > 0);
+  // }, [searchQuery]);
 
   return (
     <EmailPageLayout>
-      <div className="flex flex-1 w-full h-full min-h-0 overflow-y-auto ">
-        <aside className="sticky top-0 min-w-55 max-w-55 h-full border-r border-slate-200 overflow-y-auto p-3">
+      <div className="main-container space-y-12 py-10 px-8 scroll-smooth">
+        {filteredEmails.length > 0 ? (
+          filteredEmails.map((email, i) => (
+            <div
+              key={email.section}
+              className="w-full"
+              id={`${email.section.toLowerCase().replace(/\s+/g, "-")}`}
+            >
+              <h2 className="text-lg font-bold uppercase flex items-center gap-2">
+                {i + 1}. {email.section} Emails
+                <span className="text-base font-normal text-slate-500">
+                  {email.frames.length > 0 && `(${email.frames.length})`}
+                </span>
+              </h2>
+
+              <div className="flex flex-col">
+                {email.frames.map((frame) => (
+                  <EmailCard
+                    key={frame.name}
+                    name={frame.name}
+                    link={frame.link}
+                    section={email.section}
+                    subject={frame.subject}
+                  />
+                ))}
+              </div>
+            </div>
+          ))
+        ) : (
+          <Empty />
+        )}
+      </div>
+    </EmailPageLayout>
+  );
+};
+
+export default FlightEmailList;
+
+{
+  /* <aside className="sticky top-0 min-w-55 max-w-55 h-full border-r border-slate-200 overflow-y-auto p-3">
           <input
             type="search"
             value={searchQuery}
@@ -58,43 +101,5 @@ const FlightEmailList = () => {
               No emails match your search.
             </p>
           )}
-        </aside>
-
-        <div className="flex-1 w-full main-container h-full space-y-12 py-6 px-8  scroll-smooth">
-          {filteredEmailData.length > 0 ? (
-            filteredEmailData.map((email, i) => (
-              <div
-                key={email.section}
-                className="w-full"
-                id={`${email.section.toLowerCase().replace(/\s+/g, "-")}`}
-              >
-                <h2 className="text-lg font-bold uppercase flex items-center gap-2">
-                  {i + 1}. {email.section} Emails
-                  <span className="text-base font-normal text-slate-500">
-                    {email.frames.length > 0 && `(${email.frames.length})`}
-                  </span>
-                </h2>
-
-                <div className="flex flex-col">
-                  {email.frames.map((frame) => (
-                    <EmailCard
-                      key={frame.name}
-                      name={frame.name}
-                      link={frame.link}
-                      section={email.section}
-                      subject={frame.subject}
-                    />
-                  ))}
-                </div>
-              </div>
-            ))
-          ) : (
-            <Empty />
-          )}
-        </div>
-      </div>
-    </EmailPageLayout>
-  );
-};
-
-export default FlightEmailList;
+        </aside> */
+}
