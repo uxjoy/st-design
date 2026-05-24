@@ -1,4 +1,4 @@
-import { getIconsByCategory } from "@/utils/common";
+import { getIconsByCategory } from "@/utils/getIconsByCategory";
 
 export default async function IconLayout() {
   const iconsByCategory = await getIconsByCategory();
