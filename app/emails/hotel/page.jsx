@@ -1,10 +1,11 @@
-import Empty from "../../../components/Empty";
+import EmailLayout from "@/components/EmailLayout";
+import hotelEmails from "@/data/hotelEmails";
 import EmailPageLayout from "../page";
 
 const HotelEmailList = () => {
   return (
     <EmailPageLayout>
-      <Empty />
+      <EmailLayout serviceEmails={hotelEmails} />
     </EmailPageLayout>
   );
 };
