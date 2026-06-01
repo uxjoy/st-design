@@ -90,9 +90,9 @@ export default function Navbar() {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 text-white"
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1882ff] text-white text-sm"
               >
-                U
+                ST
               </button>
 
               {dropdownOpen && (

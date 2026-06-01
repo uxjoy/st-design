@@ -13,7 +13,7 @@ const Tokenization = () => {
 
   return (
     <DesignSystemLayout>
-      <div className="side-pattern">
+      <div className="md:side-pattern">
         <PageHeader
           label={"Design tokens"}
           title={"Font system"}
@@ -66,7 +66,7 @@ const Tokenization = () => {
                   <thead>
                     <tr>
                       <th>Token</th>
-                      <th>Value</th>
+                      <th className="hidden md:table-cell">Value</th>
                       <th>Reference</th>
                     </tr>
                   </thead>
@@ -78,7 +78,7 @@ const Tokenization = () => {
                           <p>{token.name.replaceAll("/", "-")}</p>
                         </td>
 
-                        <td className="w-1/4">
+                        <td className="w-1/4 hidden md:table-cell">
                           <p className="w-fit inline-flex items-center gap-2 font-mono text-sm uppercase">
                             <span
                               className="min-w-2 min-h-2 rounded-full inline-block border border-black/10"
@@ -89,7 +89,7 @@ const Tokenization = () => {
                         </td>
 
                         <td className="w-1/4">
-                          <p className="w-fit inline-flex items-center text-sm text-slate-700 gap-2 font-mono border border-slate-200 rounded px-2 py-1 bg-slate-50">
+                          <p className="w-fit inline-flex items-center text-sm text-slate-700 gap-1.5 md:gap-2 font-mono border border-slate-200 rounded px-2 py-1 bg-slate-50">
                             <span
                               className="min-w-4 min-h-4 rounded inline-block border border-black/10"
                               style={{ backgroundColor: token.hex }}
