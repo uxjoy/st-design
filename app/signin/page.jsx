@@ -57,11 +57,11 @@ const SignIn = () => {
   };
 
   return (
-    <div className="bg-slate-50 w-screen h-screen flex flex-col gap-8 items-center justify-center p-4">
+    <div className="bg-white md:bg-slate-50 w-screen min-h-screen flex flex-col gap-8 items-center justify-center overflow-y-hidden">
       {/* <img src="/logo.svg" alt="ShareT Logo" className="h-10" /> */}
 
       <form
-        className="w-full sm:w-[400px] flex flex-col gap-8 items-center justify-center bg-white p-12 rounded-xl shadow-xl shadow-slate-950/5 border border-slate-100"
+        className="w-full md:w-100 flex flex-col gap-8 items-center justify-center md:bg-white p-6 md:p-12 md:rounded-2xl md:shadow-xl shadow-slate-950/5 md:border border-slate-100"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col gap-1 w-full text-center">
@@ -75,7 +75,7 @@ const SignIn = () => {
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="px-3 h-11 border border-slate-200 bg-slate-50 rounded-md placholder:text-slate-300"
+            className="px-3 h-11 border border-slate-200 bg-slate-50 rounded-md placholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full"
           />
 
           <div className="group relative">
@@ -84,7 +84,7 @@ const SignIn = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="px-3 h-11 border border-slate-200 bg-slate-50 rounded-md placholder:text-slate-300 w-full"
+              className="px-3 pr-10 h-11 border border-slate-200 bg-slate-50 rounded-md placholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full"
             />
             <button
               className="absolute right-0.5 top-1/2 -translate-y-1/2 text-slate-400 group-hover:text-slate-600 transition duration-200 w-10 h-10 text-2xl"
@@ -95,7 +95,8 @@ const SignIn = () => {
             </button>
           </div>
 
-          {error && ( // Display error message if present
+          {error && (
+            // Display error message if present
             <p className="text-red-500 text-sm flex items-center gap-1">
               ⚠️ {error}{" "}
             </p>

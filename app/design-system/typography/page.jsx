@@ -52,7 +52,7 @@ const Typography = () => {
 
   return (
     <DesignSystemLayout>
-      <div className="side-pattern">
+      <div className="md:side-pattern">
         <PageHeader
           label={"Typography"}
           title={"Font system"}
@@ -91,10 +91,13 @@ const Typography = () => {
 
                 <div className="space-y-4">
                   {groups.map((group) => (
-                    <table key={group.groupLabel}>
+                    <table
+                      key={group.groupLabel}
+                      className="w-full! table-auto border-collapse"
+                    >
                       <thead className="mb-4">
                         <tr>
-                          <th className="font-medium text-base text-slate-800 !lowercase">
+                          <th className="font-medium text-base text-slate-800 lowercase!">
                             {group.groupLabel.replaceAll("/", "-")}
                           </th>
                         </tr>
@@ -107,9 +110,9 @@ const Typography = () => {
                             className="hover:bg-slate-50 transition-all ease-in-out duration-200"
                           >
                             <td>
-                              <span className="flex flex-col gap-3 py-2">
+                              <span className="flex flex-col gap-3 py-2 w-full">
                                 <p
-                                  className="text-slate-900"
+                                  className="text-slate-900 truncate w-full"
                                   style={{
                                     fontFamily: typographyJson.fontFamily,
                                     fontSize: `${style.fontSize}px`,

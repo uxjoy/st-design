@@ -1,10 +1,10 @@
-import Empty from "../../../components/Empty";
+import EmailLayout from "@/components/EmailLayout";
 import EmailPageLayout from "../page";
 
 const VisaEmailList = () => {
   return (
     <EmailPageLayout>
-      <Empty />
+      <EmailLayout serviceEmails={[]} />
     </EmailPageLayout>
   );
 };

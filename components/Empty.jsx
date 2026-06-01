@@ -1,6 +1,6 @@
 const Empty = () => {
   return (
-    <div className="w-full h-full text-center flex flex-col items-center justify-center">
+    <div className="w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center justify-center">
       <svg
         className="w-12 h-12 text-slate-300"
         xmlns="http://www.w3.org/2000/svg"

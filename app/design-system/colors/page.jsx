@@ -25,7 +25,7 @@ const Colors = () => {
 
   return (
     <DesignSystemLayout>
-      <div className="side-pattern">
+      <div className="md:side-pattern">
         <PageHeader
           label={"Customization"}
           title={"Premetive Colors"}
@@ -48,7 +48,7 @@ const Colors = () => {
                 </div>
               </div>
 
-              <div className="grid gap-3 grid-cols-11">
+              <div className="grid gap-3 grid-cols-4 md:grid-cols-11">
                 {colors.map((color) => (
                   <div
                     key={color.scale}

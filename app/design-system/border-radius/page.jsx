@@ -5,7 +5,7 @@ import borderRadiusData from "./borderRadius";
 const BorderRadius = () => {
   return (
     <DesignSystemLayout>
-      <div className="side-pattern">
+      <div className="md:side-pattern">
         <PageHeader
           label={"Design tokens"}
           title={"Border Radius"}
