@@ -1,7 +1,7 @@
 "use client";
 
 import navLinks from "@/data/navLinks";
-import { Home, LogOut, Menu, X } from "lucide-react";
+import { Home, LogOut } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -129,7 +129,7 @@ export default function Navbar() {
           )}
 
           {/* Mobile Menu Button */}
-          <button
+          {/* <button
             className="rounded-md p-2 md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
@@ -140,7 +140,7 @@ export default function Navbar() {
             )}
 
             <span className="sr-only">Toggle menu</span>
-          </button>
+          </button> */}
         </div>
       </div>
 

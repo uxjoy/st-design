@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import Empty from "./Empty";
+import Empty from "../Empty";
 
 export default function EmailsContent({ sections }) {
   const searchParams = useSearchParams();

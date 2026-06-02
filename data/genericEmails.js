@@ -62,6 +62,11 @@ const genericEmails = [
         link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6789-36771",
         subject: "Daily Transaction Report",
       },
+      {
+        name: "ThankYouforYourDonation",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6813-28277",
+        subject: "Thank You for Your Donation",
+      },
     ],
   },
 ];

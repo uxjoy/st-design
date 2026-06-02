@@ -1,4 +1,4 @@
-import EmailLayout from "@/components/EmailLayout";
+import EmailLayout from "@/components/email/EmailLayout";
 import flightEmailData from "../../../data/flightEmails";
 import EmailPageLayout from "../page";
 

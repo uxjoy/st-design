@@ -1,3 +1,4 @@
+import BottomNav from "@/components/BottomNav";
 import { Lato } from "next/font/google";
 import { Suspense } from "react";
 import NavigationLoader from "../components/NavigationLoader";
@@ -28,6 +29,8 @@ export default function RootLayout({ children }) {
       <body className={font.className} suppressHydrationWarning>
         <Suspense fallback={null}>
           <NavigationLoader />
+
+          <BottomNav />
         </Suspense>
         {children}
       </body>
