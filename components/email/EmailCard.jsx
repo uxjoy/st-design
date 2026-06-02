@@ -1,7 +1,7 @@
 import { LucideArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { Figma } from "./icons/Figma";
-import { Badge } from "./ui/badge";
+import { Figma } from "../../public/Figma";
+import { Badge } from "../ui/badge";
 
 const EmailCard = ({ name, link, section, subject }) => {
   return (

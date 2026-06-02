@@ -1,4 +1,4 @@
-import EmailLayout from "@/components/EmailLayout";
+import EmailLayout from "@/components/email/EmailLayout";
 import EmailPageLayout from "../page";
 
 const HolidayEmailList = () => {

@@ -1,7 +1,5 @@
-import Empty from "../../../components/Empty";
+import EmailLayout from "@/components/email/EmailLayout";
 import EmailPageLayout from "../page";
-import MainLayout from "../../../components/MainLayout";
-import EmailLayout from "@/components/EmailLayout";
 
 const LifeStyleEmailList = () => {
   return (

@@ -2,8 +2,8 @@
 
 import { filterEmailSections } from "@/utils/common";
 import { useMemo, useState } from "react";
+import Empty from "../Empty";
 import EmailCard from "./EmailCard";
-import Empty from "./Empty";
 
 interface EmailLayoutProps {
   serviceEmails: {

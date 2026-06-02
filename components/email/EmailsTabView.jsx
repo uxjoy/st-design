@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import Empty from "./Empty";
+import Empty from "../Empty";
 
 function EmailsTabViewContent({ sections }) {
   const [activeTab, setActiveTab] = useState("all");

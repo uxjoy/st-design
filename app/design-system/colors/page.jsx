@@ -25,7 +25,7 @@ const Colors = () => {
 
   return (
     <DesignSystemLayout>
-      <div className="md:side-pattern">
+      <div className="md:side-pattern pb-15">
         <PageHeader
           label={"Customization"}
           title={"Premetive Colors"}

@@ -13,7 +13,7 @@ const Tokenization = () => {
 
   return (
     <DesignSystemLayout>
-      <div className="md:side-pattern">
+      <div className="md:side-pattern pb-15">
         <PageHeader
           label={"Design tokens"}
           title={"Font system"}

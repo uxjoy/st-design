@@ -52,7 +52,7 @@ const Typography = () => {
 
   return (
     <DesignSystemLayout>
-      <div className="md:side-pattern">
+      <div className="md:side-pattern pb-15">
         <PageHeader
           label={"Typography"}
           title={"Font system"}

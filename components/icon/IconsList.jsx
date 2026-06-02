@@ -52,7 +52,7 @@ export default function IconsContent({ iconsByCategory }) {
 
   return (
     <div className="min-h-full" ref={topRef}>
-      <div className="sticky top-0 z-10 bg-white flex items-center gap-2 border-b border-slate-200 px-5">
+      <div className="sticky top-0 z-10 bg-white flex items-center gap-2 border-b border-slate-200 px-3.5">
         <LucideSearch size={20} className="text-blue-500" />
         <input
           type="text"
@@ -70,7 +70,7 @@ export default function IconsContent({ iconsByCategory }) {
       </div>
 
       {filteredIcons.length > 0 ? (
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-2 sm:gap-3 p-6">
+        <div className="grid grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-2 sm:gap-3 p-4 pb-25 sm:pb-4">
           {filteredIcons.map((iconPath) => (
             <IconCard key={iconPath} iconName={iconPath} />
           ))}

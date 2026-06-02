@@ -1,4 +1,4 @@
-import IconsContent from "@/components/IconsContent";
+import IconsList from "@/components/icon/IconsList";
 import MainLayout from "@/components/MainLayout";
 import { getIconsByCategory } from "@/utils/getIconsByCategory";
 import { Suspense } from "react";
@@ -17,7 +17,7 @@ export default async function IconsPage() {
   return (
     <Suspense fallback={null}>
       <MainLayout sidebarData={categories} menuText={"ST Icons"}>
-        <IconsContent iconsByCategory={iconsByCategory} />
+        <IconsList iconsByCategory={iconsByCategory} />
       </MainLayout>
     </Suspense>
   );
