@@ -52,6 +52,7 @@ export default function Navbar() {
 
       setIsLoggedIn(false);
       router.push("/signin");
+      router.refresh();
     } catch (err) {
       console.error("Logout failed:", err);
     }
