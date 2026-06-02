@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-const BottomNav = () => {
+const BottomNav = ({ isLoggedIn }) => {
   const pathname = usePathname();
   const [indicatorStyle, setIndicatorStyle] = useState({
     left: 0,
@@ -40,6 +40,11 @@ const BottomNav = () => {
       });
     }
   }, [activeIndex, pathname]);
+
+  // Don't render if not logged in
+  if (!isLoggedIn) {
+    return null;
+  }
 
   return (
     <div className="p-3 fixed bottom-0 left-0 right-0 z-50 md:hidden bg-linear-to-t from-white to-transparent">

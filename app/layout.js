@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 import BottomNav from "@/components/BottomNav";
 import { Lato } from "next/font/google";
 import { Suspense } from "react";
@@ -23,14 +24,17 @@ export const metadata = {
     "Bangladesh's leading online travel agency. Book air tickets, hotels, tour packages & more without any hassle at the most affordable rates with ShareTrip.",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const cookieStore = await cookies();
+  const isLoggedIn = cookieStore.get("isLoggedIn")?.value === "true";
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={font.className} suppressHydrationWarning>
         <Suspense fallback={null}>
           <NavigationLoader />
 
-          <BottomNav />
+          <BottomNav isLoggedIn={isLoggedIn} />
         </Suspense>
         {children}
       </body>
