@@ -1,8 +1,8 @@
 import MainLayout from "@/components/MainLayout";
 import { Suspense } from "react";
-import sidebarData from "../../data/sidebarData";
+import sidebarData from "@/data/sidebarData";
 
-export default function EmailPageLayout({ children }) {
+export default function EmailsLayout({ children }) {
   const groupedSidebarData = sidebarData.map((category) => ({
     label: category.name,
     items:

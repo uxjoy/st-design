@@ -74,6 +74,8 @@ const Typography = () => {
               ))}
             </div> */}
 
+          <div className=""></div>
+
           <div className="space-y-10 scroll-smooth">
             {categories.map(([categoryName, groups]) => (
               <section key={categoryName} className="space-y-4 scroll-smooth">
@@ -91,62 +93,56 @@ const Typography = () => {
 
                 <div className="space-y-4">
                   {groups.map((group) => (
-                    <table
+                    <div
                       key={group.groupLabel}
-                      className="w-full! table-auto border-collapse"
+                      className="w-full! table-auto border-collapse border border-slate-200 overflow-hidden"
                     >
-                      <thead className="mb-4">
-                        <tr>
-                          <th className="font-medium text-base text-slate-800 lowercase!">
-                            {group.groupLabel.replaceAll("/", "-")}
-                          </th>
-                        </tr>
-                      </thead>
+                      <p className="font-medium text-base text-slate-800 lowercase! bg-slate-100 px-4 py-3">
+                        {group.groupLabel.replaceAll("/", "-")}
+                      </p>
 
-                      <tbody>
+                      <div className="">
                         {group.variants.reverse().map((style) => (
-                          <tr
+                          <div
                             key={style.name}
-                            className="hover:bg-slate-50 transition-all ease-in-out duration-200"
+                            className="relative flex flex-col gap-3 w-full p-4 border-t border-slate-200 hover:bg-slate-50 transition-all ease-in-out duration-200"
                           >
-                            <td>
-                              <span className="flex flex-col gap-3 py-2 w-full">
-                                <p
-                                  className="text-slate-900 truncate w-full"
-                                  style={{
-                                    fontFamily: typographyJson.fontFamily,
-                                    fontSize: `${style.fontSize}px`,
-                                    fontWeight: style.fontWeight,
-                                    lineHeight:
-                                      style.lineHeight?.unit === "PIXELS"
-                                        ? `${style.lineHeight.value}px`
-                                        : `${style.lineHeight.value}%`,
-                                    letterSpacing:
-                                      style.letterSpacing?.unit === "PERCENT"
-                                        ? `${style.letterSpacing.value / 100}em`
-                                        : undefined,
-                                  }}
-                                >
-                                  {sampleText}
-                                </p>
+                            <div className="absolute top-0 right-0 w-15 h-full bg-linear-to-r from-transparent via-white/80 to-white z-0"></div>
 
-                                <span className="flex flex-wrap items-center gap-2 text-xs text-slate-600">
-                                  <span className="rounded-full bg-slate-100 px-2.5 py-1">
-                                    FS: {style.fontSize}px
-                                  </span>
-                                  <span className="rounded-full bg-slate-100 px-2.5 py-1">
-                                    LH: {displayLineHeight(style.lineHeight)}
-                                  </span>
-                                  <span className="rounded-full bg-slate-100 px-2.5 py-1 capitalize">
-                                    FW: {style.fontWeight}
-                                  </span>
-                                </span>
+                            <h1
+                              className="text-slate-900 text-nowrap w-full"
+                              style={{
+                                fontFamily: typographyJson.fontFamily,
+                                fontSize: `${style.fontSize}px`,
+                                fontWeight: style.fontWeight,
+                                lineHeight:
+                                  style.lineHeight?.unit === "PIXELS"
+                                    ? `${style.lineHeight.value}px`
+                                    : `${style.lineHeight.value}%`,
+                                letterSpacing:
+                                  style.letterSpacing?.unit === "PERCENT"
+                                    ? `${style.letterSpacing.value / 100}em`
+                                    : undefined,
+                              }}
+                            >
+                              {sampleText}
+                            </h1>
+
+                            <span className="flex flex-wrap items-center gap-2 text-xs text-slate-600">
+                              <span className="rounded-full bg-slate-100 px-2.5 py-1">
+                                FS: {style.fontSize}px
                               </span>
-                            </td>
-                          </tr>
+                              <span className="rounded-full bg-slate-100 px-2.5 py-1">
+                                LH: {displayLineHeight(style.lineHeight)}
+                              </span>
+                              <span className="rounded-full bg-slate-100 px-2.5 py-1 capitalize">
+                                FW: {style.fontWeight}
+                              </span>
+                            </span>
+                          </div>
                         ))}
-                      </tbody>
-                    </table>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </section>
