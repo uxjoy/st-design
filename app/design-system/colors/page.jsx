@@ -48,7 +48,7 @@ const Colors = () => {
                 </div>
               </div>
 
-              <div className="grid gap-3 grid-cols-4 md:grid-cols-11">
+              <div className="grid gap-3 grid-cols-4 md:grid-cols-6">
                 {colors.map((color) => (
                   <div
                     key={color.scale}
@@ -61,7 +61,7 @@ const Colors = () => {
                       style={{ backgroundColor: color.hex }}
                     >
                       {copiedHex === color.hex ? (
-                        <div className="rounded bg-slate-950 px-1 py-0.5 text-xs text-white">
+                        <div className="bg-slate-950 px-1.5 py-0.5 text-xs text-white rounded-full">
                           Copied
                         </div>
                       ) : null}
