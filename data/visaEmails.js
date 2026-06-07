@@ -1,6 +1,6 @@
 const visaEmails = [
   {
-    section: "Booking Emails",
+    section: "Booking",
     frames: [
       {
         name: "b2cVisaBookingConfirmationEmail",

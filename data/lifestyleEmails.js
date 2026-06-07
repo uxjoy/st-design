@@ -150,6 +150,41 @@ const lifestyle = [
     ],
   },
   {
+    section: "Refund + Reminder",
+    frames: [
+      {
+        name: "b2cLifestyleShopRefundRequestEmail",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6874-2407",
+        subject: "Refund Request || Shop - [Booking Code]",
+      },
+      {
+        name: "b2cLifestyleShopRefundRequestFollowUpEmail",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6874-2539",
+        subject: "Reminder- Refund Request || Shop - [Booking Code]",
+      },
+      {
+        name: "b2cLifestyleMobileRechargeRefundRequestEmail",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6874-2672",
+        subject: "Refund Request || Mobile Recharge - [Booking Code]",
+      },
+      {
+        name: "b2cLifestyleMobileRechargeRefundRequestFollowUpEmail",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6874-2794",
+        subject: "Reminder- Refund Request || Mobile Recharge- [Booking Code]",
+      },
+      {
+        name: "b2cLifestylePaybillRefundRequestEmail",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6874-2917",
+        subject: "Refund Request || Pay Bill - [Booking Code]",
+      },
+      {
+        name: "b2cLifestylePaybillRefundRequestFollowUpEmail",
+        link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6874-3039",
+        subject: "Reminder- Refund Request || Pay Bill - [Booking Code]",
+      },
+    ],
+  },
+  {
     section: "Attachment & Others",
     frames: [
       {

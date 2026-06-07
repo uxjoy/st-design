@@ -5,11 +5,16 @@ const MobileTopTab = ({ data }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
+  // Support both flat arrays and grouped arrays ({ label, items })
+  const flatItems = data?.length && "items" in data[0]
+    ? data.flatMap((group) => group.items)
+    : data;
+
   return (
     <>
-      {data && (
+      {flatItems && (
         <section className="px-3 border-b border-slate-200 flex items-center overflow-x-auto no-scrollbar space-x-2.5 sm:hidden">
-          {data.map((item) => {
+          {flatItems.map((item) => {
             const currentUrl = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
 
             const isActive =

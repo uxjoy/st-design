@@ -34,7 +34,7 @@ const EmailLayout = ({ serviceEmails }: EmailLayoutProps) => {
             id={`${email.section?.toLowerCase().replace(/\s+/g, "-")}`}
           >
             <h2 className="text-lg font-bold uppercase flex items-center gap-2">
-              {i + 1}. {email.section} Emails
+              {i + 1}. {email.section}
               <span className="text-base font-normal text-slate-500">
                 {email.frames?.length > 0 && `(${email.frames.length})`}
               </span>

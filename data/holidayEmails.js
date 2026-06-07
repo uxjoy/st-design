@@ -1,6 +1,6 @@
 const holidayEmails = [
   {
-    section: "Booking Emails",
+    section: "Booking",
     frames: [
       {
         name: "b2cHolidayBookingConfirmationEmail",
