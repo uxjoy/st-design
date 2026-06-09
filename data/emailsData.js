@@ -1053,6 +1053,258 @@ const emailsData = {
       ],
     },
   ],
+
+  ops: [
+    {
+      section: "Hotel",
+      frames: [
+        {
+          name: "opsHotelBookingConfirmationEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-1480",
+          subject: "Your booking is Confirmed!",
+        },
+        {
+          name: "opsHotelBookingConfirmationVouchers",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-1689",
+          subject: "Hotel Booking Confirmation Vouchers",
+        },
+      ],
+    },
+    {
+      section: "Holiday",
+      frames: [
+        {
+          name: "opsHolidayBookingConfirmationEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-1767",
+          subject: "Your booking is Confirmed!",
+        },
+        {
+          name: "opsHolidayBookingCancellationEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-1842",
+          subject: "Your Booking has been Cancelled!",
+        },
+        {
+          name: "opsHolidayBookingConfirmationVoucher",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-2120",
+          subject: "Holiday Booking Confirmation Voucher",
+        },
+      ],
+    },
+    {
+      section: "HR",
+      frames: [
+        {
+          name: "opsSalaryCertificateEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-1865",
+          subject: "Salary Certificate for EmployeeName",
+        },
+        {
+          name: "opsSalaryCertificateAttachment",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-1873",
+          subject: "Salary Certificate Attachment",
+        },
+        {
+          name: "opsLeaveApplicationEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-1933",
+          subject: "Your Leave Application is Submitted",
+        },
+        {
+          name: "opsRequisitionsApplication",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-1959",
+          subject: "Your Requisition Request is Submitted",
+        },
+        {
+          name: "opsPayslipEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-2147",
+          subject: "Payslip for January 2021",
+        },
+        {
+          name: "opsPayslipVoucher",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-2319",
+          subject: "Payslip for January 2021",
+        },
+      ],
+    },
+    {
+      section: "Finance",
+      frames: [
+        {
+          name: "opsInvoiceEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-1997",
+          subject: "Your Payment has been Received!",
+        },
+        {
+          name: "opsRefundEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-2044",
+          subject: "Refund Ticket",
+        },
+        {
+          name: "opsInvoiceAttachment",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-2061",
+          subject: "Your Payment has been Received!",
+        },
+      ],
+    },
+    {
+      section: "Attendance",
+      frames: [
+        {
+          name: "attendanceNoticeEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-2049",
+          subject: "Refund Ticket",
+        },
+        {
+          name: "attendanceNoteEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-2055",
+          subject: "Attendance Note",
+        },
+      ],
+    },
+    {
+      section: "Others",
+      frames: [
+        {
+          name: "opsCustomPaymentLink",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-1423",
+          subject: "Custom Payment Link",
+        },
+        {
+          name: "panelMailNotification",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-2104",
+          subject: "Roster swap request.",
+        },
+        {
+          name: "opsCustomRequestTaskAssigned",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6935-2112",
+          subject: "Roster swap request.",
+        },
+      ],
+    },
+  ],
+  "in-house-proposal": [
+    {
+      section: "Holiday",
+      frames: [
+        {
+          name: "inHouseHolidayProposalEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6942-14210",
+          subject: "Holiday Proposal Email",
+        },
+      ],
+    },
+    {
+      section: "Flight",
+      frames: [
+        {
+          name: "inHouseFlightProposal",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6942-14241",
+          subject: "Flight Proposal",
+        },
+        {
+          name: "inHouseFlightProposalVoucher",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6942-14376",
+          subject: "Flight Proposal Voucher",
+        },
+      ],
+    },
+    {
+      section: "Hotel",
+      frames: [
+        {
+          name: "inHouseHotelProposal",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6942-14562",
+          subject: "Hotel Proposal",
+        },
+        {
+          name: "inHouseHotelProposalVoucher",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6942-14633",
+          subject: "Hotel Proposal Voucher",
+        },
+      ],
+    },
+    {
+      section: "Others",
+      frames: [
+        {
+          name: "MultiPackageProposal",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6943-15555",
+          subject: "Multi Package Proposal",
+        },
+        {
+          name: "b2cCustomRequest",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6943-16114",
+          subject: "Your Leave Application is Submitted",
+        },
+        {
+          name: "MultiPackageProposalVoucher",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6943-16576",
+          subject: "Multi Package Proposal Voucher",
+        },
+      ],
+    },
+    {
+      section: "Coupon",
+      frames: [
+        {
+          name: "evalyGiftCardEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6944-17074",
+          subject: "Welcome to ShareTrip",
+        },
+      ],
+    },
+    {
+      section: "Data Bird",
+      frames: [
+        {
+          name: "registrationSuccess",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6944-17966",
+          subject: "Registration Success",
+        },
+      ],
+    },
+    {
+      section: "ShareTrip Status Report",
+      frames: [
+        {
+          name: "stStatusReport",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6944-17229",
+          subject: "Status Report",
+        },
+      ],
+    },
+  ],
+  others: [
+    {
+      section: "Coupon",
+      frames: [
+        {
+          name: "evalyGiftCardEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6944-17074",
+          subject: "Welcome to ShareTrip",
+        },
+      ],
+    },
+    {
+      section: "Data Bird",
+      frames: [
+        {
+          name: "registrationSuccess",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6944-17966",
+          subject: "Registration Success",
+        },
+      ],
+    },
+    {
+      section: "ShareTrip Status Report",
+      frames: [
+        {
+          name: "stStatusReport",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6944-17229",
+          subject: "Status Report",
+        },
+      ],
+    },
+  ],
 };
 
 export default emailsData;

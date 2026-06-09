@@ -34,6 +34,8 @@ const sidebarData: NavItem[] = [
       { name: "ops", href: "/ops" },
       { name: "ST Rooms", href: "/st-rooms" },
       { name: "profile", href: "/profile" },
+      { name: "in hourse proposal", href: "/in-house-proposal" },
+      { name: "others", href: "/others" },
       // { name: "generic", href: "/generic" },
     ],
   },
