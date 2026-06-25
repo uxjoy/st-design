@@ -39,6 +39,16 @@ const sidebarData: NavItem[] = [
       // { name: "generic", href: "/generic" },
     ],
   },
+  {
+    name: "B2B Emails",
+    href: "/b2b",
+    children: [
+      { name: "generic", href: "/b2bGeneric" },
+      { name: "flight", href: "/b2bFlight" },
+      { name: "lifestyle", href: "/b2bLifestyle" },
+      { name: "visa", href: "/b2bVisa" },
+    ],
+  },
 ];
 
 export default sidebarData;

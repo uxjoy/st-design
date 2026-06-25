@@ -1273,6 +1273,7 @@ const emailsData = {
       ],
     },
   ],
+
   others: [
     {
       section: "Coupon",
@@ -1301,6 +1302,359 @@ const emailsData = {
           name: "stStatusReport",
           link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=6944-17229",
           subject: "Status Report",
+        },
+      ],
+    },
+  ],
+  b2bflight: [
+    {
+      section: "User",
+      frames: [
+        {
+          name: "b2bTemporaryPasswordEmailTemplate",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7047-16804",
+          subject: "Your Temporary Password for ShareTrip B2B Account",
+        },
+      ],
+    },
+    {
+      section: "Void",
+      frames: [
+        {
+          name: "b2bFlightAutoVoid",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-26173",
+          subject: "Flight Auto Void",
+        },
+        {
+          name: "b2bFlightRefundVoidSettledCompleted",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-27697",
+          subject: "Flight Refund Void Settled Completed",
+        },
+        {
+          name: "b2bFlightAutoVoidSettled",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-32372",
+          subject: "Flight Auto Void Settled",
+        },
+        {
+          name: "b2bFlightManualVoidSettled",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-32616",
+          subject: "Flight Manual Void Settled",
+        },
+        {
+          name: "b2bFlightAutoVoidAccountsSettled",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-32918",
+          subject: "Flight Auto Void Accounts Settled",
+        },
+        {
+          name: "b2bFlightManualVoidAccountsSettled",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-33103",
+          subject: "Flight Manual Void Accounts Settled",
+        },
+        {
+          name: "b2bFlightManualVoid",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-27149",
+          subject: "Flight Manual Void",
+        },
+      ],
+    },
+    {
+      section: "Re-Issue",
+      frames: [
+        {
+          name: "b2bFlightBookingReissuedQuotedEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-28049",
+          subject: "Flight Booking Reissued Quoted Email",
+        },
+        {
+          name: "b2bFlightManualReissueQuotedEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-36859",
+          subject: "Flight Manual Reissue Quoted Email",
+        },
+        {
+          name: "b2bflightManualReissuePaymentNotificationEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-37924",
+          subject: "Flight Manual Reissue Payment Notification Email",
+        },
+        {
+          name: "b2bFlightBookingReissuedBookedEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-28606",
+          subject: "Flight Booking Reissued Booked Email",
+        },
+        {
+          name: "b2bFlightAutoReissueBookedEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-34855",
+          subject: "Flight Auto Reissue Booked Email",
+        },
+        {
+          name: "b2bFlightAutoReissueConfirmedEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-35943",
+          subject: "Flight Auto Reissue Confirmed Email",
+        },
+        {
+          name: "b2bFlightBookingReissuedConfirmationEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-29160",
+          subject: "Flight Booking Reissued Confirmation Email",
+        },
+        {
+          name: "b2bFlightManualReissueConfirmedEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-38436",
+          subject: "Flight Manual Reissue Confirmed Email",
+        },
+        {
+          name: "b2bFlightReissuePaymentReversalCompleted",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-39491",
+          subject: "Flight Reissue Payment Reversal Completed",
+        },
+        {
+          name: "b2bFlightBookingReissuedCancelledEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-30858",
+          subject: "Flight Booking Reissued Cancelled Email",
+        },
+        {
+          name: "b2bFlightBookingReissuedAttachmentEticket",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-39822",
+          subject: "Flight Booking Reissued Attachment Eticket",
+        },
+        {
+          name: "b2bFlightBookingReissuedConfirmationVoucher",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7050-43637",
+          subject: "Flight Booking Reissued Confirmation Voucher",
+        },
+      ],
+    },
+    {
+      section: "Refund",
+      frames: [
+        {
+          name: "b2bFlightAutoRefund",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-26612",
+          subject: "Flight Auto Refund",
+        },
+        {
+          name: "b2bFlightManualRefund",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-26953",
+          subject: "Flight Manual Refund",
+        },
+        {
+          name: "b2bFlightRefundQuotation",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-27333",
+          subject: "Flight Refund Quotation",
+        },
+        {
+          name: "b2bFlightAutoRefundSettled",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-33622",
+          subject: "Flight Auto Refund Settled",
+        },
+        {
+          name: "b2bFlightManualRefundSettled",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-33849",
+          subject: "Flight Manual Refund Settled",
+        },
+        {
+          name: "b2bFlightManualRefundQuoted",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-34151",
+          subject: "Flight Manual Refund Quoted",
+        },
+        {
+          name: "b2bFlightAutoRefundAccountsSettled",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-34476",
+          subject: "Flight Auto Refund Accounts Settled",
+        },
+        {
+          name: "b2bFlightManualRefundAccountsSettled",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-34704",
+          subject: "Flight Manual Refund Accounts Settled",
+        },
+      ],
+    },
+    {
+      section: "Partial Pay",
+      frames: [
+        {
+          name: "b2bFlightPartialpayRequestUpdated",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7048-17643",
+          subject: "Flight Partialpay Request Updated",
+        },
+        {
+          name: "b2bFlightPartialpayIssuedEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7048-18271",
+          subject: "Flight Partialpay Issued Email",
+        },
+        {
+          name: "b2bFlightPartialpayFullPay",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7048-18828",
+          subject: "Flight Partialpay Full Pay",
+        },
+        {
+          name: "b2bFlightPartialpayReminder",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7048-24280",
+          subject: "Reminder on Due Amount for Partial Payment",
+        },
+        {
+          name: "b2bFlightPartialpayCancelled",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-24525",
+          subject: "Flight Partialpay Cancelled",
+        },
+        {
+          name: "b2bFlightPartialpayUpdateNotifyForAdmin",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-24950",
+          subject: "Flight Partialpay Update Notify For Admin",
+        },
+        {
+          name: "b2bFlightPartialpayUpdateNotifyForKamManager",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-25134",
+          subject: "Flight Partialpay Update Notify For Kam Manager",
+        },
+      ],
+    },
+    {
+      section: "Add-on Services",
+      frames: [
+        {
+          name: "b2bFlightWheelchairRequestConfirmation",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7048-17058",
+          subject: "Flight Wheelchair Request Confirmation",
+        },
+        {
+          name: "b2bFlightMealRequestConfirmation",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7048-17332",
+          subject: "Flight Meal Request Confirmation",
+        },
+      ],
+    },
+    {
+      section: "Seat",
+      frames: [
+        {
+          name: "b2bFlightSeatSelectionConfirmation",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-31959",
+          subject: "Flight Seat Selection Confirmation",
+        },
+      ],
+    },
+    {
+      section: "Attachments",
+      frames: [
+        {
+          name: "b2bFlightBookingIssuedAttachmentEticket",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7050-43932",
+          subject: "Flight Booking Issued Attachment Eticket",
+        },
+        {
+          name: "b2bFlightBookingIssuedAttachmentTermsConditions",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-41006",
+          subject: "Flight Booking Issued Attachment Terms Conditions",
+        },
+        {
+          name: "b2bFlightBookingPartialpayIssuedAttachment",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7050-41334",
+          subject: "Flight Booking Partialpay Issued Attachment",
+        },
+        {
+          name: "b2bFlightPartialpayInvoiceAttachment",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7050-42674",
+          subject: "Flight Partialpay Invoice Attachment",
+        },
+        {
+          name: "b2bFlightPartialpayFullPayInvoiceAttachment",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7050-42917",
+          subject: "Flight Partialpay Full Pay Invoice Attachment",
+        },
+        {
+          name: "b2bFlightSeatSelectionDownloadVoucherAttachment",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7050-43302",
+          subject: "Flight Seat Selection Download Voucher Attachment",
+        },
+      ],
+    },
+    {
+      section: "Others",
+      frames: [
+        {
+          name: "b2bFlightTicketPriceUpdated",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-25436",
+          subject: "Flight Ticket Price Updated",
+        },
+        {
+          name: "b2bFlightTimeLimitExtension",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-25745",
+          subject: "Flight Time Limit Extension",
+        },
+        {
+          name: "b2bFlightManualPaymentReversalNotification",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7049-39146",
+          subject: "Flight Manual Payment Reversal Notification",
+        },
+      ],
+    },
+  ],
+  b2bGeneric: [
+    {
+      section: "User",
+      frames: [
+        {
+          name: "b2bPortalUserForgotPassword",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7041-11267",
+          subject: "Forgot Password?",
+        },
+      ],
+    },
+    {
+      section: "Admin",
+      frames: [
+        {
+          name: "mocatValidationNotifyForAdmin",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7041-14407",
+          subject: "MoCAT Expiry Reminder",
+        },
+      ],
+    },
+  ],
+  b2bLifestyle: [
+    {
+      section: "Mobile Recharge",
+      frames: [
+        {
+          name: "b2bMobileRechargeConfirmation",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7046-16110",
+          subject: "Mobile Recharge Confirmation",
+        },
+      ],
+    },
+    {
+      section: "Utility",
+      frames: [
+        {
+          name: "b2bUtilityPaymentConfirmation",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7046-16443",
+          subject: "Utility Payment Confirmation",
+        },
+      ],
+    },
+  ],
+  b2bVisa: [
+    {
+      section: "Booking Emails",
+      frames: [
+        {
+          name: "b2bVisaApplicationConfirmedEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7050-44815",
+          subject: "Your visa is Confirmed!",
+        },
+        {
+          name: "b2bVisaApplicationCancelledEmail",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7050-45178",
+          subject: "Your visa is Cancelled!",
+        },
+      ],
+    },
+    {
+      section: "Voucher",
+      frames: [
+        {
+          name: "b2bVisaBookingConfirmationVoucher",
+          link: "https://www.figma.com/design/DARvblwD3MEoBADqu8AKDa?node-id=7050-45466",
+          subject: "Your booking is Confirmed!",
         },
       ],
     },
