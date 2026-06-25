@@ -1306,7 +1306,7 @@ const emailsData = {
       ],
     },
   ],
-  b2bflight: [
+  b2bFlight: [
     {
       section: "User",
       frames: [
