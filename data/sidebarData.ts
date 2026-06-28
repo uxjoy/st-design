@@ -7,9 +7,10 @@ export interface NavItem {
 
 const sidebarData: NavItem[] = [
   {
-    name: "emails",
+    name: "B2C Emails",
     href: "/emails",
     children: [
+      { name: "generic", href: "/generic" },
       { name: "flight", href: "/flight" },
       { name: "hotel", href: "/hotel" },
       { name: "lifestyle", href: "/lifestyle" },
@@ -24,7 +25,6 @@ const sidebarData: NavItem[] = [
       // { name: "ops", href: "/ops" },
       // { name: "st rooms", href: "/st-rooms" },
       // { name: "profile", href: "/profile" },
-      { name: "generic", href: "/generic" },
     ],
   },
   {
