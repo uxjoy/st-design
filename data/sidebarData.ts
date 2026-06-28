@@ -28,6 +28,16 @@ const sidebarData: NavItem[] = [
     ],
   },
   {
+    name: "B2B Emails",
+    href: "/b2b",
+    children: [
+      { name: "generic", href: "/b2bGeneric" },
+      { name: "flight", href: "/b2bFlight" },
+      { name: "lifestyle", href: "/b2bLifestyle" },
+      { name: "visa", href: "/b2bVisa" },
+    ],
+  },
+  {
     name: "others",
     href: "/others",
     children: [
@@ -37,16 +47,6 @@ const sidebarData: NavItem[] = [
       { name: "in hourse proposal", href: "/in-house-proposal" },
       { name: "others", href: "/others" },
       // { name: "generic", href: "/generic" },
-    ],
-  },
-  {
-    name: "B2B Emails",
-    href: "/b2b",
-    children: [
-      { name: "generic", href: "/b2bGeneric" },
-      { name: "flight", href: "/b2bFlight" },
-      { name: "lifestyle", href: "/b2bLifestyle" },
-      { name: "visa", href: "/b2bVisa" },
     ],
   },
 ];
